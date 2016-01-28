@@ -12,6 +12,7 @@ use League\Fractal\Manager;
 use EllipseSynergie\ApiResponse\Laravel\Response;
 use Chrisbjr\ApiGuard\Repositories\ApiKeyRepository;
 use Chrisbjr\ApiGuard\Repositories\ApiLogRepository;
+use Illuminate\Support\Facades\Input;
 
 class ApiGuard
 {
@@ -35,7 +36,7 @@ class ApiGuard
       // Let's instantiate the response class first
       $manager = new Manager;
 
-      $manager->parseIncludes(\Illuminate\Support\Facades\Input::get(Config::get('apiguard.includeKeyword', 'include'), 'include'));
+      $manager->parseIncludes(Input::get(Config::get('apiguard.includeKeyword', 'include'), 'include'));
 
       $response = new Response($manager);
 
