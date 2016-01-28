@@ -5,7 +5,6 @@ namespace Chrisbjr\ApiGuard\Http\Middleware;
 use App;
 use Log;
 use Route;
-use Input;
 use Config;
 use Closure;
 use Illuminate\Support\Str;
@@ -36,7 +35,7 @@ class ApiGuard
       // Let's instantiate the response class first
       $manager = new Manager;
 
-      $manager->parseIncludes(Input::get(Config::get('apiguard.includeKeyword', 'include'), 'include'));
+      $manager->parseIncludes(Illuminate\Support\Facades\Input::get(Config::get('apiguard.includeKeyword', 'include'), 'include'));
 
       $response = new Response($manager);
 
