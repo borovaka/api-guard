@@ -35,7 +35,7 @@ class ApiGuard
       // Let's instantiate the response class first
       $manager = new Manager;
 
-      $manager->parseIncludes(Illuminate\Support\Facades\Input::get(Config::get('apiguard.includeKeyword', 'include'), 'include'));
+      $manager->parseIncludes(\Illuminate\Support\Facades\Input::get(Config::get('apiguard.includeKeyword', 'include'), 'include'));
 
       $response = new Response($manager);
 

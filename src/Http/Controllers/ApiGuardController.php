@@ -24,7 +24,7 @@ class ApiGuardController extends Controller
         // Launch middleware
         $this->middleware('apiguard:'.$serializedApiMethods);
 
-        $manager->parseIncludes(Illuminate\Support\Facades\Input::get(Config::get('apiguard.includeKeyword', 'include'), 'include'));
+        $manager->parseIncludes(\Illuminate\Support\Facades\Input::get(Config::get('apiguard.includeKeyword', 'include'), 'include'));
 
         $this->response = new Response($manager);
     }
