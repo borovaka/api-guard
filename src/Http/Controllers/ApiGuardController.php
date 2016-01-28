@@ -2,7 +2,6 @@
 
 namespace Chrisbjr\ApiGuard\Http\Controllers;
 
-use Input;
 use Config;
 use Exception;
 use League\Fractal\Manager;
